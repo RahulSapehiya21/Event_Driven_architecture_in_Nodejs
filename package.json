@@ -1,10 +1,17 @@
 {
   "dependencies": {
     "express": "^5.2.1",
+    "ioredis": "^5.9.2",
     "mysql2": "^3.16.3"
   },
   "scripts": {
-  "start": "node src/server.js"
+  "start": "node src/server.js",
+  "worker": "node src/workers/student.worker.js",
+  "dev": "concurrently \"npm start\" \"npm run worker\""
+},
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
 
-}
+
